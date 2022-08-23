@@ -55,6 +55,12 @@ def get_ciba():
     note_en = r.json()["content"]
     note_ch = r.json()["note"]
     return note_ch, note_en
+  
+note_ch = config["note_ch"]
+note_en = config["note_en"]
+if note_ch == "" and note_en == "":
+     
+note_ch, note_en = get_ciba()
 
 
 client = WeChatClient(app_id, app_secret)
